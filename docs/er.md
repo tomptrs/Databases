@@ -1,3 +1,10 @@
+
+* [Inleiding](inleiding.md)
+* [Logische en fysische gegevens](gegevens.md)
+* [Entiteit-Relatie diagramma](er.md)
+* [Relationele databases](relationeel.md)
+* [Normalisatie](normalisatie.md)
+
 # Logische beschrijving van gegevens met het E-R model
 
 ![er](img/ervoorbeeld.jpg)

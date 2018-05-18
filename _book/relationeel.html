@@ -1,0 +1,667 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Relationele databases · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="normalisatie.html" />
+    
+    
+    <link rel="prev" href="er.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Samenvatting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="inleiding.html">
+            
+                <a href="inleiding.html">
+            
+                    
+                    Inleiding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="gegevens.html">
+            
+                <a href="gegevens.html">
+            
+                    
+                    Logische en fysische gegevens
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="er.html">
+            
+                <a href="er.html">
+            
+                    
+                    Entiteit-Relatie diagramma
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="relationeel.html">
+            
+                <a href="relationeel.html">
+            
+                    
+                    Relationele databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="normalisatie.html">
+            
+                <a href="normalisatie.html">
+            
+                    
+                    Normalisatie
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Relationele databases</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="relationele-datbases">Relationele datbases</h1>
+<h2 id="inleiding">Inleiding</h2>
+<p>Zowat alle moderne databases worden uitgevoerd als een relationele database. Zonder uitzondering
+worden alle grote bedrijven bestuurd met behulp van relationele databanken.</p>
+<p>Tot voor kort was het beheer van die databanken het domein van computergoeroes die de harde
+schijven rechtstreeks aanstuurden om een maximale performantie uit de database te halen. De dag van
+vandaag wordt de database taak zelf overgenomen door gespecialiseerde bedrijven. De databases
+worden dan verder beheerd door middel van een standaard taal.</p>
+<p>Wellicht de meest bekende is gedefinieerd in de SQL (Standard Query Language) standaard. Een
+andere is de XML (eXtended Markup Language) taal, die meer gekoppeld is aan Intranet en Internet
+toepassingen.</p>
+<p>In de relationele databases wordt het Entity-Relation model, dat we eerder gezien hebben, volledig
+uitgewerkt. De term &quot;Relationeel model&quot; werd voor het eerst gebruikt door E.F. Codd. Codd werkte
+op dat ogenblik voor IBM, die echter van diens onderzoeksresultaten geen gebruik maakte. De vruchten
+van het werk van Codd werden daarom geplukt door een (op dat ogenblik) klein bedrijfje: Oracle.</p>
+<h2 id="dbms">DBMS</h2>
+<p>Een DBMS (Database Management System) is een set van programma&#x2019;s die kunnen gebruikt worden
+om databases aan te maken, te beheren, en te gebruiken.</p>
+<p>Grof gesteld bestaat een DBMS uit twee delen:</p>
+<p>&#x2022; Het database beheer gedeelte, waarmee databases kunnen aangemaakt, gewijzigd of
+gewist worden. Hier worden ook relaties of tabellen en beperkingen op de data gedefinieerd.
+De gegevens van het database beheer gedeelte worden bewaard in het schema. Het
+schema bevat metadata die de databases zelf beschrijft.</p>
+<p>&#x2022; Het data beheer gedeelte, waarmee gegevens kunnen ingevoerd, gewist en gewijzigd
+worden, eenmaal de database is aangemaakt.</p>
+<p>De tendens bestaat om databases op meerdere platforms tegelijk beschikbaar te maken: PC&#x2019;s,
+mainframes, en onder verschillende operating systems. Om die integratie te kunnen verwezenlijken,
+wordt gebruik gemaakt van een uniforme taal, meestal SQL.</p>
+<h2 id="het-relationele-model">Het relationele model</h2>
+<p>Relationele databases zijn de dag van vandaag niet meer weg te denken. De hoofdreden hiervoor, is het feit dat je de structuur van de onderliggende database kan wijzigen, zonder dat je daarvoor al je programma&#x2019;s moet aanpassen.</p>
+<p>Veronderstel bijvoorbeeld dat je &#xE9;&#xE9;n of meerdere kolommen wil toevoegen aan je database. In dat geval
+moet je je bestaande programma&#x2019;s niet beginnen aanpassen, tenzij deze gebruik maken van de nieuwe
+kolommen, uiteraard. Zolang je de namen van de bestaande kolommen niet wijzigt of wist, zal je
+programma gewoon blijven verder werken met de database, alsof er nooit een wijziging is geweest.</p>
+<p>Bij relationele databases geef je elke kolom een naam, en zal je de kolom enkel benaderen met behulp van die naam. De database zal dan intern de nodige handelingen uitvoeren om met de kolomnaam de juiste data te vinden.</p>
+<p>Als gebruiker sta je dus een niveau boven de database zelf.</p>
+<p>Het relationele van een database houdt in dat de rijen van de kolommen in &#xE9;&#xE9;n databasetabel, met
+elkaar gekoppeld zijn.</p>
+<p>Het doel van het relationele model is een betrouwbaar informatiemodel. Alle voorheen beschikbare methoden voor opslag van gegevens vertoonden inherente problemen of anomalieen genoemd. Hieronder enkele voorbeelden van anomalieen. Stel dat een bedrijf een adresboek ge&#xEF;mplementeerd heeft. Aangezien een bedrijf te maken heeft met misschien andere grote bedrijven kan het makkelijk gebeuren dat zich op 1 lokatie meerdere contacten bevinden. Zo kan het dus zijn dat 2 contacten op paardenmarkt 92 bevinden. In eerste instantie lijkt dit geen probleem op te leveren, omdat de beschikbare informatie relatief eenvoudig toegankelijk is. Het probleem ontstaat wanneer dit bedrijf besluit naar een andere lokatie te verhuizen In dat geval zullen we de informatie in 2 verschillende rijen moeten aanpassen. Di t lijkt misschien niet dramatisch, maar stelt u zich eens voor dat de tabel geen 2 maar 20000 rijen telt. Iemand of iets (een programma) moet ervoor zorgen dat de gegevens overal correct worden aangepast.</p>
+<p>Een ander probleem stelt zich dat we een databank voor contactgegevens van personen (onze adresboek) hebben gemaakt, maar we willen enkel contact gegevens van een bedrijf invoegen. Dit gaat niet omdat onze applicatie personen vraagt. Dus moeten we wachten tot we een naam van een specifiek persoon hebben die aan het bedrijf gelinkt kan worden.</p>
+<p>Deze voorbeelden van anomalieen worden dus voorkomen door het relationeel model.</p>
+<h2 id="de-structurele-elementen-van-een-relationele-databasemodel">De structurele elementen van een relationele databasemodel</h2>
+<p>Het relationele model was innoverend door zijn eenvoud en wiskundige onderbouwing. Veel informatie wordt in tabelvorm gestructureerd en tabellen kunnen wiskundig worden weergegeven door middel van relaties. (we onderscheiden enerzijds basistabellen, anderzijds afgeleide relaties ( of views zie later). Onderstaand wordt het relationele model uit de doeken gedaan, met als basis:</p>
+<p>&#x2022;    structureel aspect : gebruikers zien de data als tabellen.
+&#x2022;    integriteitsaspect : de tabellen voldoen aan integriteitsbeperkingen.
+&#x2022;    manipulatief aspect : de operators leiden tabellen van tabellen af.</p>
+<h2 id="structurele-aspect">Structurele Aspect</h2>
+<h3 id="basistabellen">Basistabellen</h3>
+<p>De bouwstenen van een tabel zijn atomaire datatypes. Met atomair bedoelen we dat de gegevens, voor wat betreft het relationeel databasemodel, als 1 eenheid en dus als niet verder opdeelbaar worden beschouwd. Met andere woorden, kan men atomaire gegevens niet verder opsplitsen in deelgegevens. (atomaire gegevens kunnen hierdoor niet samengesteld of meerwaardig zijn!).
+Bijvoorbeeld de tabel &#x2018;Artiest&#x2019; uit een relationele schildersdatabase. Het schema is:
+Artiest (A_ID :char(3), Naam:varchar, Voornaam:varchar, Geboren:integer,Gestorven:integer).</p>
+<p>Deze tabel is opgebouwd uit de naam Artiest en 5 attributen, die elk een atomair datatype hebben. Op een bepaald tijdstip bestaat deze tabel bijvoorbeeld uit 4 rijen:</p>
+<p>Zoals reeds gezegd wordt een tabel op deze manier gevisualiseerd in het relationele model:</p>
+<p><img src="img/tabel1.jpg" alt="tabel"></p>
+<p>Het aantal attributen (of kolommen) van een tabel noemen we de graad van de relatie. Het datatype van een attribuut noemen we het attribuuttype. 
+De waarden uit de rijen heten attribuutwaarden.
+Het aantal rijen van de tabel wordt de kardinaliteit van de tabel genoemd.
+Eigenschappen</p>
+<ol>
+<li>Binnen een tabel kunnen geen dubbele rijen voorkomen.</li>
+<li>De rijen van een tabel zijn niet geordend.</li>
+<li>De attributen van een tabel zijn niet geordend.</li>
+<li>Alle attribuutwaarden van een tabel zijn atomair.</li>
+</ol>
+<h3 id="afgeleide-tabel-of-views">Afgeleide tabel of Views</h3>
+<p>Naast tabellen beschouwen we in het relationeel database model ook views. </p>
+<blockquote>
+<p>Een view is een virtuele tabel die is afgeleid van basistabellen en/of andere views</p>
+</blockquote>
+<p>Views maken het mogelijk om de tabellen op een alternatieve manier te bekijken. Van de view wordt enkel de naam in de catagolus van de database bijgehouden en worden de rijen van de view dus niet (redundant) opgeslagen, maar worden telkens opnieuw gereconstrueerd uit de betrokken tabellen.
+Views worden voornamelijk gebruikt om te ingewikkelde instructies op basistabellen te vermijden. Er wordt eerst een view aangemaakt, en op deze view worden verder sql instructies op toegepast.</p>
+<h3 id="ontbrekende-informatie">Ontbrekende informatie</h3>
+<p>In re&#xEB;le situaties komt het voor dat informatie ontbreekt. Twee hoofdredenen voor dit ontbreken zijn:</p>
+<ul>
+<li><p>Onbekende informatie: de gegevens bestaan, maar zijn niet voorhanden. Zodra de gegevens beschikbaar zijn, is er geen sprake meer van ontbrekende informatie.</p>
+</li>
+<li><p>Niet gedefinieerde informatie: de gegevens bestaan niet of zijn niet van toepassing. Ze zullen dus niet beschikbaar komen.
+Het ontbreken van data moet op een gepaste manier worden behandeld in een database. Hiervoor bestaan er twee technieken, namelijk het gebruik van NULL-waarden en DEFAULT-waarden.</p>
+</li>
+</ul>
+<h4 id="null-&#x2013;-waarden">Null &#x2013; waarden</h4>
+<p>Een null waarde geeft aan dat de actuele attribuutwaarde ontbreekt. Bij de meeste database systemen wordt verondersteld dat de attributen null-waarden kunnen bevatten, tenzij dit expliciet verboden wordt. Een verbod voor null-waarden wordt vastgelegd binnen de sql &#x2013;in structie CREATE TABLE (deze wordt gebruikt om een nieuwe tabel aan te maken). Bij het desbetreffende attribuut worden de woorden  NOT NULL opgegeven.</p>
+<h4 id="defaultwaarden">Defaultwaarden</h4>
+<p>Een alternatief is om bij de opbouw van de database een zogenoemde defaultwaarde te definieren voor een attribuut waarvoor data kunnen ontbreken. Een defaultwaarde wordt vastgelegd met de sql instructie CREATE TABLE en met het woord DEFAULT.
+Bijvoorbeeld, bij de specificatie van het attribuut Geboren met datatype integer van de tabel Artiest kan bijvoorbeeld opgegeven worden dat de defaultwaarde 0 is.
+Let wel, defaultwaarden hebben als nadeel dat zij slechts een benadering of model voor de attribuutwaarde geven, wat tot verkeerde resultaten kan leiden bij het afleiden van data zoals minimum, maximum, som , gemiddelde.</p>
+<h2 id="integriteitsaspecten---sleutels">Integriteitsaspecten - Sleutels</h2>
+<p>Het relationele model heeft mogelijkheden om semantische correctheid van data in de database te helpen garanderen (sleutels, integriteitsregels). Wel te weten dat een dbms niet alle fouten kan opvangen en de zorg van de correctheid van data grotendeels bij de gebruiker of toepassingsprogramma ligt dat de data invoert.</p>
+<h3 id="sleutels">Sleutels</h3>
+<p>Verwantschappen tussen tabellen wordt in het relationeel model weergegeven via sleutels. Drie essentiele sleutelconcepten worden onderscheiden:</p>
+<ul>
+<li>Kandidaatsleutel</li>
+<li>Primaire sleutel</li>
+<li>Vreemde sleutel</li>
+</ul>
+<h4 id="kandidaatsleutel">Kandidaatsleutel</h4>
+<p>Als K een deelverzameling is van de verzameling van alle attributen van een gegeven tabel T, dan is K een kandidaatsleutel voor T als en slechts als voldaan is aan:</p>
+<ul>
+<li>Uniciteiteigenschap: In R bevatten geen 2 rijen dezelfde waarde voor alle attributen uit K.</li>
+<li>Irreducibiliteiteigenschap: wanneer uit K attributen worden weggelaten, mag niet meer voldaan zijn aan de uniciteitseigenschap.</li>
+</ul>
+<p>Een kandidaatsleutel kan enkelvoudig of samengesteld zijn!
+Bijvoorbeeld uit een tabel Artiest uit de schilderskunstdatabase kunnen 2 kandidaatsleutels worden beschouwd:</p>
+<ul>
+<li><p>De kandidaatsleutel A_ID(char(3)): want deze is een unieke arteistenidentificator.</p>
+</li>
+<li><p>De kandidaatsleutel: {Naam:varchar, voornaam:varchar, Geboren:integer}</p>
+</li>
+</ul>
+<h3 id="primaire-sleutel">Primaire sleutel</h3>
+<p>Het relationeel model schrijft voor dat er voor elke tabel precies 1 primaire sleutel gekozen moet worden uit de kandidaatsleutels van de tabel. De overige kandidaatsleutels noemen we alternatieve sleutels. (in de praktijk heeft men er baat bij om een kandidaatsleutel met een zo klein mogelijk aantal attributen als primaire sleutel te kiezen.
+Omdat de combinatie van attribuutwaarden van een primaire sleutel of alternatieve sleutel uniek moeten zijn, mogen de attributen van een primaire sleutel geen null-waarden bevatten.</p>
+<h3 id="vreemde-sleutel">Vreemde sleutel</h3>
+<p>Om een verwantschap tussen een rij uit tabel T1 en nul of meer rijen uit tabel T2 weer te geven worden vreemde sleutels gebruikt.
+Een vreemde sleutel F van tabel T2 is een verzameling van attributen van T2 waarvoor geldt:</p>
+<ul>
+<li><p>Er bestaat een tabel T1 (T1 niet noodzakelijk verschillend van T2&#xB0; met een kandidaatsleutel K1, die evenveel attributen bevat als F en waarbij er een 1 op 1 correspondentie is tussen de attributen van F, zodat corresponderende attributen dezelfde datatypes hebben</p>
+</li>
+<li><p>Op elke tijdstip komt elke waarde van F in T2 eveneens voor als waarde van K in een rij van T1.
+In de praktijk worden vreemde sleutels meestal gedefinieerd over een primaire sleutel!</p>
+</li>
+</ul>
+<p>Bijvoorbeeld: </p>
+<p><img src="img/vreemdesleutel.jpg" alt="vreemdesleutel"></p>
+<h3 id="integriteitrestricties">Integriteitrestricties</h3>
+<p>Een tweede mogelijkheid ter ondersteuning van data-integriteit in relationele databases betreft de mogelijkheid om integriteitsrestricties te specifieren voor de tabellen.</p>
+<p>Een integriteitsrestrictie is een voorwaarde waaraan alle data uit een database op elk moment moeten voldoen.</p>
+<p>Een integriteitsrestrictie wordt gekarakteriseerd door een naam en een logische expressie (waar, onwaar, null). Als de evaluatie onwaar oplevert zal het dbms in actie schieten door een foutboodschap aan te geven.</p>
+<p>Bijvoorbeeld:</p>
+<p><img src="img/assertion.jpg" alt="assertion"></p>
+<h2 id="manipulatief-aspect">Manipulatief aspect</h2>
+<p>De operators leiden tabellen van tabellen af. De gedragsaspecten van een relationeel databasemodel zijn onderbouwd uit de traditionele verzamelingenleer, met als operaties: vereniging, doorsnede, verschil en cartesiaans product, plus enkele toegevoegde namelijk select, projectie en join (er zijn er nog andere , maar in deze cursus bespreken we deze). 
+basisoperatoren van de relationele algebra: vereniging, doorsnede, verschil en cartesiaans product</p>
+<h3 id="de-verenigingsoperator-t1-union-t2">De verenigingsoperator (T1 union T2)</h3>
+<p>De vereniging van 2 tabellen (met schema&#x2019;s van hetzelfde type!) is een tabel  met een schema van hetzelfde type die bestaat uit rijen die ofwel voorkomen in T1, ofwel voorkomen in T2, ofwel in T1 en T2. (Nota: tabellen kunnen geen dubbele rijen bevatten!)</p>
+<h3 id="de-doorsnede-operator-t1-intersect-t2">De doorsnede operator (T1 intersect T2)</h3>
+<p>Als T1 en T2 twee tabellen zijn met schema&#x2019;s van hetzelfde type, dan is de doorsnede van deze tabel een tabel met een schema van hetzelfde type en met rijen die zowel in T1 als T2 voorkomen.</p>
+<h3 id="de-verschil-operator-t1-minus-t2">De verschil operator (T1 minus T2)</h3>
+<p>Als T1 en T2 twee tabellen zijn met schema&#x2019;s van hetzelfde type, dan is het verschil van deze tabellen een tabel met een schema van hetzelfde type en met rijen die wel voorkomen in T1 maar niet in T2</p>
+<p><img src="img/manipulatief1.jpg" alt="manipulatief1"></p>
+<h3 id="cartesiaans-productoperator">Cartesiaans productoperator</h3>
+<p>Als T1 en T2 twee tabellen zijn die geen gemeenschappelijke  attributen hebben, dan is het cartesisch product, 
+                                     T1 TIMES T2</p>
+<p>van deze tabellen een nieuwe tabel waarvan de attributen uit hetschema worden bekomen door de unie te nemen van de verzameling van de attributen van T1 en de verzameling van de attributen van T2. 
+De rijen die hier bestaan is een rij verkregen uit T1 samen te voegen met een rij uit T2.</p>
+<p><img src="img/carhesis.jpg" alt="carhesis"></p>
+<h3 id="selectie-operator-where">Selectie operator (where)</h3>
+<p>Als T een tabel is en e een logische expresie is waarvan alle parameters attributen zijn van T dan resulteert de selectie:</p>
+<p>R where e</p>
+<p>In een nieuwe tabel die dezelfde attributen heeft als T en waarvan de rijen bestaan uit de rijen van T waarvoor de expressie e ge&#xEB;valueerd is naar &#x2018;waar&#x2019;.</p>
+<p><img src="img/selectie.jpg" alt="selectie"></p>
+<h3 id="project-operator">Project operator</h3>
+<p>De project operator wordt gebruikt om attributen te selecteren uit een relatie. Als 
+AlsT  een relatie is en {A1:T1, A2:T2, &#x2026;, Ap:Tp} een deelverzameling is van de attributen van R dan resulteert de projectie, 
+                                      T {A1, A2, &#x2026;, Ap}
+in een nieuwe tabel waarvan het schema bekomen wordt uit het schema van T door enkel de attributen uit {A1:T1, A2:T2, &#x2026;, Ap:Tp} te behouden en waarbij de rijen bestaan uit alle rijen t=(A1:w1, A2:w2, &#x2026;, Ap:wp) waarvoor een rij voorkomt in TR met attribuutwaarde w1 voor A1, w2 voor A2,&#x2026;, en wp voor Ap. </p>
+<p><img src="img/projectie.jpg" alt="projectie"></p>
+<h3 id="de-join-operator">De Join operator</h3>
+<p>De Join bestaat uit een aantal varieten, we bespreken hier de inner &#x2013; join.
+Als T1 een tabel is met attributen 
+           {X1:TX1, X2:TX2, &#x2026;, Xm:TXm, Y1:TY1, Y2:TY2, &#x2026;, Yn:TYn}
+en T2 een tabel is met attributen 
+             {Y1:TY1, Y2:TY2, &#x2026;, Yn:TYn, Z1:TZ1, Z2:TZ2, &#x2026;, Zp:TZp}
+dan resulteert de join, 
+                                                T1 JOIN T2 
+in een nieuwe tabel waarvan het schema bestaat uit de attributen {X1:TX1, X2:TX2, &#x2026;, Xm:TXm, Y1:TY1, Y2:TY2, &#x2026;, Yn:TYn,Z1:TZ1, Z2:TZ2, &#x2026;, Zp:TZp} en waarvan de rijen bestaan uit alle rijen die worden bekomen door een rij van T1 samen te voegen met een rij van T2 onder de voorwaarde dat alle gemeenschappelijke attributen gelijke waarden moeten hebben. </p>
+<p><img src="img/join.jpg" alt="join"></p>
+<h2 id="relationeel-database-ontwerp">Relationeel database ontwerp</h2>
+<h3 id="inleiding">inleiding</h3>
+<p>In dit hoofdstuk bespreken we kort de analyse van databaseproblemen.</p>
+<p>We vertrekken van een vraagstelling door een gebruiker. We bepalen de input-output flow en
+onderzoeken welke processen binnen bv. een bedrijf werkzaam zijn. Wie moet op welk moment de data
+behandelen? Welke gegevens moeten zeker bewaard worden? Welke rapporten moet afgedrukt
+worden? Welke problemen kunnen zich voordoen bij het behandelen van de gegevens (bestellingen die
+geannuleerd worden, beschadigde of verdwenen goederen, kortingsacties, werknemers die ontslag
+nemen, ...)? Dit gedeelte wordt de informatie-analyse genoemd, wat we reeds gezien hebben voor het maken van een ER-diagram.</p>
+<p>Eenmaal een programmeur een goed beeld heeft van de informatie-analyse binnen een bedrijf, kan hij
+starten met de design van de database. Dit is nog steeds een design op een hoog niveau. Welke
+datatypes zullen gebruikt worden voor de gegevens? Welke gegevens worden in &#xE9;&#xE9;n tabel bewaard?
+Welke gegevens moeten snel kunnen benaderd worden? Welke gegevens moeten snel kunnen
+gesorteerd worden? Wat zijn de relaties tussen de tabellen onderling? Hoeveel records kunnen
+maximaal opgeslagen worden voor een gegeven schijfgebruik? Dit onderdeel wordt de
+gegevensanalyse genoemd.</p>
+<p>Nadien wordt pas de vraag gesteld welke databasestructuur het meest geschikt is om de gevraagde data
+te bewaren. Voor grotere databases zal in praktijk meer en meer blijken dat de beste aanpak voor de
+database, het relationele model is. </p>
+<h3 id="de-informatie-analyse">de informatie analyse</h3>
+<p>Nemen we als voorbeeld het informatiesysteem van een bank.
+De gebeurtenissen die aan het informatiesysteem moeten bekendgemaakt worden zijn:</p>
+<p>&#x2022; overschrijvingen van rekeningen
+&#x2022; openen van nieuwe rekeningen
+&#x2022; opzeggen van bestaande rekeningen</p>
+<p>Merk op dat ook stortingen en afhalingen kunnen beschouwd worden als een speciale manier van
+overschrijven, nl. naar of van een fictieve rekening.</p>
+<p>Later moet informatie gegeven worden, zoals:</p>
+<p>&#x2022; een directe melding, indien het saldo ten gevolge van een transactie onder een bepaald
+minimum komt.
+&#x2022; saldo van een rekening, wanneer de houder hierom vraagt.
+&#x2022; &#xE9;&#xE9;nmaal per week een rekeningoverzicht voor alle rekeninghouders van rekeningen waarop sedert het vorige overzicht mutaties werden doorgevoerd. Dit overzicht bevat de mutaties in kwestie en het nieuwe saldo.</p>
+<p>Het vastleggen van de behoefte aan informatie bij de gebruikers, is de informatie-analyse. Met de
+bovenstaande (eenvoudige) specificatie kunnen we ons al een beeld vormen van welke &quot;dingen&quot; voor
+de bank belangrijk zijn, en wat de bank over die dingen moet bijhouden:</p>
+<p><img src="img/analyse1.jpg" alt="analyse1"></p>
+<p>In deze tabel vinden we de basisgegevens die voor de bank belangrijk zijn, met daarbij telkens een
+opsplitsing in deelgegevens (2e kolom) , die samen belangrijk zijn om elk van de elementen uit de 1e
+kolom te bepalen.</p>
+<p>Naast dit overzicht kunnen we nog regels formuleren die betrekking hebben op de samenhang tussen
+deze dingen: zo kan een rekeninghouder meer dan &#xE9;&#xE9;n rekening hebben, een rekening kan niet bestaan
+zonder dat er een houder bekend is, ...</p>
+<p>Het resultaat van de informatie-analyse is een model van de werkelijkheid, waarin wordt vastgelegd
+&quot;wat&quot; er is, en niet hoe er vanuit computer-toepassingen naar wordt gekeken.</p>
+<p>Deze informatie-analyse komt tot stand door de informatie-analisten in samenspraak met de gebruikers.
+Zonder enige twijfel is de informatie-analyse het belangrijkste moment in de aanmaak van de database.
+Indien een database een belangrijke structurele fout bevat, is dit meestal te wijten aan een fout bij de
+informatie-analyse.</p>
+<p>Het oplossen van een fout in de informatie-analyse is in de meeste gevallen een tijdrovende en dure
+zaak. Om die reden zullen heel wat bedrijven eisen dat de opdrachtgever een document ondertekent
+waarin de informatie-analyse gedetailleerd beschreven staat. Dit heeft twee redenen. De eerste reden is
+dat de klant daarmee de goedkeuring geeft voor de analyse. De tweede reden is dat de klant zo belet
+wordt om de eisen telkens te wijzigen in de loop van het project.</p>
+<p>In de fase van de informatie-analyse, komt de functie van de analyst het meest tot uiting. Het is
+namelijk van uitzonderlijk belang dat de analyst een goede kennis heeft van het productieproces en de
+onderliggende problemen.</p>
+<p>Het maken van een goede informatie-analyse, is een kunst. De analyst moet in staat zijn om de
+informatie te doorgronden die in het bedrijf rond gaat. Dit omvat ook de informatie die de mensen je
+niet vertellen omdat ze die gegevens als &quot;evident&quot; beschouwen. Als analyst moet je mensen kunnen
+uitvragen en interviewen, zonder dat ze hun geduld verliezen en zonder dat de analyst zijn geduld
+verliest.</p>
+<p>Waar moet je op letten bij het maken van de analyse ?</p>
+<p>&#x2022; Wat zijn de gegevens die moeten opgeslagen worden? Klanten, leveranciers, goederen,
+magazijnen, facturen, componenten, gemeenten, ...</p>
+<p>&#x2022; Welke zijn de verschillende fasen in de behandeling? Wie moet allemaal onafhankelijk
+met de database werken? Dit worden aparte modules in de database. O.a. klantenbeheer,
+stockbeheer, behandeling van goederen, ...</p>
+<p>&#x2022; Wat is de input-output flow in elk van de verschillende fazen? Wat zijn de noodzakelijke
+gegevens en wat wordt gevraagd als output?</p>
+<p>&#x2022; Maak een lijst met alle rapporten die moeten kunnen gemaakt worden in elke fase van het
+productieproces. Dikwijls vormen deze rapporten een zeer goede basis voor een doorzicht
+in het databaseprobleem.</p>
+<p>&#x2022; Moet er automatisch gemeten worden, of zijn sommige onderdelen machine-afhankelijk?
+Moet er compatibiliteit zijn met andere databaseproducten? Moet import en export van
+gegevens mogelijk zijn? ...</p>
+<h4 id="de-analyse">de analyse</h4>
+<p>De eerste fase in de gegevensanalyse is het omzetten van de individuele gegevens naar een
+databaseformaat.</p>
+<p>Nemen we als voorbeeld de zeer klassieke structuur van een klantenbestand. Stel dat de informatieanalyse aangaf dat de volgende gegevens belangrijk zijn voor het klantenbestand:</p>
+<p><img src="img/analyse2.jpg" alt="analyse2"></p>
+<p>De eerste taak is het toevoegen van een uniek nummer. Dit wordt doorgaans een ID genoemd en moet
+ruim genoeg bemeten zijn. In veel gevallen wordt een &quot;long integer&quot; nummer genomen.</p>
+<p>Verder voorzien we bijvoorbeeld 50 karakters voor de naam, en 100 karakters voor het adres. De
+telefoonnummers worden gesplitst in een telefoon- en telefaxnummer. Als fiscale gegevens wordt enkel
+het BTWnummer weerhouden. We krijgen dan al voorlopig:</p>
+<p><img src="img/analyse3.jpg" alt="analyse3"></p>
+<p>In deze gegevensanalyse zitten reeds enkele stevige problemen. Zo is het best mogelijk dat een
+Telefoonnummer karakters bevat (bv. +32 om de landcode aan te duiden). Veel mensen houden er
+verder van om puntjes te plaatsen in het telefoonnummer. Ook het BTW-nummer kan alfanumerieke
+karakters bevatten (bv. BE 334.232.100 om een Belgisch BTW nummer aan te geven).</p>
+<p>Om die reden houden we de volgende regel aan: een veld krijgt pas een numerieke waarde indien er
+ook effectief met dat veld gerekend wordt. In alle andere gevallen gebruiken we een alfanumeriek veld.
+De structuur wordt dan bijvoorbeeld</p>
+<p><img src="img/analyse4.jpg" alt="analyse4"></p>
+<p>Deze analyse is nog ver van ideaal. We zullen nog moeten normaliseren. Dit zien we in het volgende
+hoofdstuk. Toch kan je je al een idee vormen van hoe de kolommen van de tabellen moeten gevormd
+worden. Bij de volledige gegevensanalyse zullen zo alle tabellen gedefinieerd zijn. </p>
+<p>Bij kleinere designs wordt rechtstreeks het relationeel model &#x2013; (tabel &#x2013; relatie structuur) ontworpen. Doch wordt in vele gevallen steeds vertrokken vanuit een conceptueel plan &#x2013; gerepresenteerd met een ER diagram. Onderstaand hoofdstuk geeft het algoritme om vertrekkende vanuit een ER- diagram een relationeel model te ontwerpen. (een goed ontworpen ER diagram laat weinig fouten toe met betrekking tot data redundantie&#x2026;)</p>
+<h2 id="het-omzettingsalgoritme-voor-relationele-databases">het omzettingsalgoritme voor relationele databases</h2>
+<p>Het omzettingsalgoritme bestaat uit een aantal stappen (8):</p>
+<h3 id="omzetting-van-reguliere-entiteiten">Omzetting van reguliere entiteiten</h3>
+<p>Voor elke reguliere entiteit (rechthoek) maken we een tabel aan.</p>
+<ul>
+<li>Als tabel naam wordt de naam van de entiteit gekozen</li>
+<li>Alle enkelvoudige, niet afgeleide attributen voegen we toe als kolom van de tabel</li>
+<li>Voor alle samengestelde attributen voegen we alleen de enkelvoudige, niet afgeleide componentattributen toe aan de tabel.</li>
+<li>Alle attributen uit de sleutel van de entiteit vormen de primaire sleutel van de tabel. Als er samengestelde attributen voorkomen in de sleutel, maken enkel hun enkelvoudige componenten deel uit van de primaire sleutel.</li>
+</ul>
+<p>Merk op dat afgeleide attributen niet worden opgenomen in de tabel, en hun data dus ook niet wordt opgeslagen in de database!</p>
+<p>Bijvoorbeeld de entiteit Artiest:</p>
+<p><img src="img/reguliere.jpg" alt="reguliere"></p>
+<h3 id="omzetting-van-zwakke-entiteiten">Omzetting van zwakke entiteiten</h3>
+<p>Voor elke zwakke entiteit (dubbele rechthoek) maken we ook een tabel aan. Daarbij ga je als volgt te werk:</p>
+<ul>
+<li><p>Kies een relatienaam. </p>
+</li>
+<li><p>Alle enkelvoudige, enkelwaardige, niet-afgeleide attributen van het zwak
+entiteittype worden toegevoegd als kolom van de tabel. </p>
+</li>
+<li><p>Voor alle samengestelde attributen worden enkel de enkelvoudige, 
+enkelwaardige, niet-afgeleide attributen toegevoegd. </p>
+</li>
+<li><p>Voeg vreemde sleutel(s) toe: voeg de primaire sleutel(s) toe van de identificerende tabel aan de tabel van de zwakke entiteit.</p>
+</li>
+<li><p>Voeg de enkelvoudige, enkelwaardige, niet-afgeleide (componenten 
+van de) attributen van de relatie toe.</p>
+</li>
+</ul>
+<p>Bijvoorbeeld:</p>
+<p><img src="img/zwakke.jpg" alt="zwakke"></p>
+<h3 id="omzetting-van-supersub-types">Omzetting van super/sub types</h3>
+<p>We veronderstellen hier wel m subtypes en 1 supertype. (De tabellen zijn in stap 1 reeds aangemaakt). Dus moeten we enkel de verwantschappen of relaties nog modelleren. Hier zijn verschillende mogelijkheden voor:</p>
+<h4 id="verschillende-tabellen-voor-sub-en-super-type">Verschillende tabellen voor sub en super type</h4>
+<p>De attributen van de primaire sleutel van het supertype worden toegevoegd aan het subtype en vormen hier een vreemde sleutel</p>
+<p><img src="img/supersub1.jpg" alt="supersub"></p>
+<h4 id="verschillende-tabellen-maar-enkel-voor-de-subtypes">Verschillende tabellen, maar enkel voor de subtypes</h4>
+<ul>
+<li>Alle attributen van het supertype worden toegevoegd als kolom in het subtype ( en de primaire sleutel wordt nu primaire sleutel in het subtype)</li>
+<li>De supertype tabel wordt verwijderd.</li>
+</ul>
+<p><img src="img/supersub1.jpg" alt="supersub"></p>
+<h3 id="omzetting-van-11-relaties">Omzetting van 1:1 relaties</h3>
+<p>We hebben hier 3 mogelijke werkwijzen waaruit kan gekozen worden:</p>
+<h4 id="samenvoegen-van-beide-tabellen">Samenvoegen van beide tabellen</h4>
+<ul>
+<li>Kies een tabel die totaal participeert in de binaire relatie.</li>
+<li>Voeg alle attributen van de andere tabel toe aan de gekozen tabel</li>
+<li>Verwijder de andere tabel</li>
+<li>Voeg de enkelvoudige , niet-afgeleide attributen toe aan de tabel</li>
+</ul>
+<p><img src="img/relatieOmzet11.jpg" alt="relatieOmzet11"></p>
+<h4 id="behoud-van-beide-tabellen">Behoud van beide tabellen</h4>
+<ul>
+<li>Kies een tabel : voeg de primaire sleutel van de andere toe als vreemde sleutel (kies een tabel die totaal participeert in de tabel)</li>
+<li>De attributen van de tabel toevoegen aan de gekozen tabel</li>
+</ul>
+<p><img src="img/relatieOmzet112.jpg" alt="relatieOmzet112"></p>
+<h4 id="behoud-van-beide-tabellen-met-een-extra-tabel">Behoud van beide tabellen met een extra tabel</h4>
+<ul>
+<li>Een extra tabel wordt toegevoegd</li>
+<li>Kies de primaire sleutels van beide en voeg deze als vreemde sleutels toe</li>
+<li>De enkelvoudige , niet-afgeleide attributen toevoegen</li>
+<li>Als primaire sleutels kan 1 van de vreemde sleutels gekozen worden</li>
+</ul>
+<p><img src="img/relatieOmzet113.jpg" alt="relatieOmzet113"></p>
+<h3 id="omzetting-van-een-1n-relatie">Omzetting van een 1:N relatie</h3>
+<ul>
+<li>Kies de tabel met kardinaliteit &#x201C;meerdere&#x201D;. Voeg de primaire sleutel van de andere tabel toe als vreemde sleutel van de gekozen tabel.</li>
+<li>Voeg de attributen toe aan de gekozen tabel</li>
+</ul>
+<p><img src="img/relatie1Nomzet.jpg" alt="relatie1Nomzet"></p>
+<h3 id="omzetting-van-mn-relaties">Omzetting van M:N Relaties</h3>
+<ul>
+<li>Maak een nieuwe tabel aan. (Kies een gepaste naam). </li>
+<li>Voeg de primaire sleutels van de tabellen van de betrokken 
+relatie toe als vreemde sleutels aan de nieuwe tabel.</li>
+<li>Voeg de enkelvoudige, enkelwaardige, niet-afgeleide attributen van de relatie toe aan de nieuwe tabel. </li>
+<li>De primaire sleutel van de nieuwe tabel  bestaat uit de 
+samenvoeging van de attributen van beide vreemde sleutels.</li>
+</ul>
+<p><img src="img/mnomzet.jpg" alt="mnomzet"></p>
+<h3 id="omzetting-van-meerwaardige-attributen">Omzetting van meerwaardige attributen</h3>
+<p>Voor elk niet afgeleid, meerwaardig attribuut wordt een nieuwe 
+tabel aangemaakt!</p>
+<ul>
+<li>Kies een gepaste naam voor de nieuwe tabel!</li>
+<li>Voeg de primaire sleutel van de tabel waar het meerwaardig attribuut voorkomt toe als vreemde sleutel van de nieuwe tabel</li>
+<li>Voeg de nodige attributen toe om 1 waarde van het meerwaardig attribuut op te slaan.</li>
+<li>De primaire sleutel ontstaat door alle attributen samen te nemen</li>
+</ul>
+<p><img src="img/meerwaardigomzets.jpg" alt="meerwaardigomzet"></p>
+<h3 id="omzetting-van-n-are-n2-relaties">Omzetting van N-are (n&gt;2) relaties</h3>
+<p>Voor elk n-air relatietype waarbij n&gt;2, wordt een nieuwe tabel aangemaakt!</p>
+<ul>
+<li>Kies een gepaste naam voor de tabel! </li>
+<li>Voeg de primaire sleutels van de tabellen van de betrokken 
+relatie als vreemde sleutels toe.</li>
+<li>Voeg de enkelvoudige, enkelwaardige, niet-afgeleide attributen van de relatie toe. </li>
+<li>De primaire sleutel van de nieuwe tabel bestaat uit de 
+samenvoeging van de attributen van alle vreemde sleutels, tenzij er entiteittypes voorkomen waarvoor de kardinaliteitrestrictie 1 is. In dat geval best een unieke identifier aanmaken! </li>
+</ul>
+<p><img src="img/naire.jpg" alt="naire"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="er.html" class="navigation navigation-prev " aria-label="Previous page: Entiteit-Relatie diagramma">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="normalisatie.html" class="navigation navigation-next " aria-label="Next page: Normalisatie">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Relationele databases","level":"1.5","depth":1,"next":{"title":"Normalisatie","level":"1.6","depth":1,"path":"normalisatie.md","ref":"normalisatie.md","articles":[]},"previous":{"title":"Entiteit-Relatie diagramma","level":"1.4","depth":1,"path":"er.md","ref":"er.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"relationeel.md","mtime":"2018-05-18T07:41:52.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-18T07:58:36.451Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

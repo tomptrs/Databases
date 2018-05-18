@@ -1,3 +1,10 @@
+
+* [Inleiding](inleiding.md)
+* [Logische en fysische gegevens](gegevens.md)
+* [Entiteit-Relatie diagramma](er.md)
+* [Relationele databases](relationeel.md)
+* [Normalisatie](normalisatie.md)
+
 # Inleiding
 
 In een informatiesysteem worden grote hoeveelheden gegevens verwerkt en opgeslagen. Het doel

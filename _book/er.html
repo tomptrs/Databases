@@ -1,0 +1,572 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Entiteit-Relatie diagramma · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="relationeel.html" />
+    
+    
+    <link rel="prev" href="gegevens.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Samenvatting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="inleiding.html">
+            
+                <a href="inleiding.html">
+            
+                    
+                    Inleiding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="gegevens.html">
+            
+                <a href="gegevens.html">
+            
+                    
+                    Logische en fysische gegevens
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="er.html">
+            
+                <a href="er.html">
+            
+                    
+                    Entiteit-Relatie diagramma
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="relationeel.html">
+            
+                <a href="relationeel.html">
+            
+                    
+                    Relationele databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="normalisatie.html">
+            
+                <a href="normalisatie.html">
+            
+                    
+                    Normalisatie
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Entiteit-Relatie diagramma</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="logische-beschrijving-van-gegevens-met-het-e-r-model">Logische beschrijving van gegevens met het E-R model</h1>
+<p><img src="img/ervoorbeeld.jpg" alt="er"></p>
+<p>Een van de belangrijkste stappen bij het opzetten van een nieuwe database is het databaseontwerp. Dit ontwerp verloopt in een aantal fasen: eerst moet abstractie gemaakt worden van de probleemstelling en wordt een abstract, conceptueel model ontworpen. Als je beschikt over het conceptueel databaseontwerp, kun je een geschikt databasemodel (vb.relationeel model, of object geori&#xEB;nteerd model) kiezen en ontwikkel je het database schema. Dit noemen we het logische database ontwerp. Daarna implementeer je het databaseschema in een dbms (database Management Systeem, of de software laag boven de fysieke data). Dit noemt met het fysische database ontwerp.</p>
+<p>Sinds een aantal jaren tracht men de gegevensanalyse en de gegevensbeschrijving volledig gescheiden
+te houden van de fysische opslag. Vandaar dat er naast de fysische terminologie vaak logische termen
+worden gebruikt.</p>
+<p>Nochtans moet onmiddellijk worden opgemerkt dat in de praktijk de logische en fysische termen vaak
+gewoon door elkaar worden gebruikt, en dat zelfs binnen de logische terminologie de vlag niet steeds
+dezelfde lading dekt!</p>
+<p>Hoewel er al meerdere pogingen werden gedaan om een standaardterminologie door te drukken,
+worden in de praktijk nog vaak verschillende termen gebruikt om eenzelfde zaak aan te duiden, en
+worden met eenzelfde term soms verschillende zaken aangeduid.</p>
+<p>Bij het doornemen van de literatuur is het dan ook zaak eerst goed te kijken wat door de schrijver met
+een bepaalde term wordt bedoeld... In deze cursus stellen we &quot;een&quot; terminologie voor, die in de praktijk
+vaak wordt gebruikt. Deze terminologie wordt het entiteit-relatiemodel genoemd. </p>
+<p>Het entiteit-relatiemodel (E-R) werd voor het eerst in 1976 beschreven door Peter Chen (1). Nadien
+werd het verder uitgebreid, en zijn er dialekten gekomen op het basismodel. Wij zullen hier het meest
+voorkomende type bespreken.</p>
+<p>Deze techniek legt de voorschriften vast voor de opbouw van een ER-diagram. Het grote voordeel van een dergelijk model is dat het onafhankelijk is van enig databasemodel. Hierdoor kun je het diagram via gepaste omzettingsalgoritmes omzetten naar databaseschema&#x2019;s..(een relationeel of een object geori&#xEB;nteerd, of een &#x2026; -schema).</p>
+<h2 id="het-volledige-databaseontwerpproces">Het volledige databaseontwerpproces</h2>
+<p>Het databaseontwerpproces bestaat uit 4 fases:</p>
+<p><img src="img/ontwerpproces.jpg" alt="ontwerpproces"></p>
+<p>Bij de informatievergaring moeten we onder meer achterhalen welke verwachtingen er zijn over de database, welke data we al dan niet moeten opnemen en welke betekenis deze data hebben. Daartoe kunnen we interviews afnemen met de opdrachtgever en potentiele gebruikers van de database.</p>
+<p>Uit deze analyse volgt bijvoorbeeld dat indien we een schilderkunstdatabase willen ontwerpen, er informatie moet worden opgeslagen over schilderijen, schilders en eigenaars. Als relevante data worden de schilderijnaam, de waarde van een schilderij, de periode waarin het werk is geschilderd, de voor-en achternaam van de schilder, het geboortejaar en sterftejaar van de schilder en de naam en het adres van de eigenaar ge&#xEF;dentificeerd.</p>
+<p>Daarbij wordt onder meer verduidelijkt dat het jaartal volstaat als informatie voor de periode van het schilderij en dat de stad en het land volstaan als adresinformatie voor de eigenaars.</p>
+<p>Verder  blijkt dat er frequent schilderijen worden toegevoegd, dat de verkoopwaarde van een schilderij voortdurend verandert en dat het soms gebeurt dat een schilderij van eigenaar verandert.</p>
+<p>Ook volgt er uit de analyse dat het voor de organisatie belangrijk is om een goed overzicht te hebben van de voorhanden zijnde schilderijen. Daarbij moeten we in hoofdzaak rapporteren welke eigenaars welke schilderijen in hun bezit hebben en wat de totale waarde is van alle schilderijen die in het bezit zijn van een bepaalde eigenaar.</p>
+<p>Eigenlijk onderscheiden we bij de informatievergaring 3 soorten analyses:</p>
+<ol>
+<li>Domein analyse: kennis over welke informatie in de database moet zitten, plus kennis over de context van de data. Dit komt men te weten aan de hand van de klassieke ondervragingsmethoden: vergadering, interviews, email, lezen van handleidingen, rapporten&#x2026;</li>
+<li>Functionele analyse: het ontdekken van de informatiestroom: hoe wordt informatie verwerkt en welke nieuwe informatie wordt aangemaakt.</li>
+<li>Behoefte analyse: welke rapporten moeten aangemaakt worden, welke applicaties zullen gebruik maken van de database..</li>
+</ol>
+<p>Bij het conceptueel ontwerp zal een plan van de te ontwerpen database worden opgesteld.  Voor de schilderkunstdatabase zal de informatie worden georganiseerd rond de centrale concepten &#x201C;Schilderij&#x201D;, &#x2018;Artiest&#x2019;, &#x201C;Eigenaar&#x201D;. Het conceptueel ontwerp resulteert in een conceptueel diagram (het ontwerp) en een functionele beschrijving van de operaties die nodig zijn om de database consistent en actueel te houden.</p>
+<p>In de functionele beschrijving moet bijvoorbeeld worden vastgelegd dat bij het toevoegen van een nieuwe artiest moet worden gecontroleerd of het sterftejaar niet voor het geboortejaar valt.</p>
+<p>Bij het logische ontwerp kiezen we voor een databasemodel en zetten we het plan van de database om naar een databaseschema dat comform is met alle voorschriften uit het gekozen databasemodel. (Bijvoorbeeld we kiezen voor een relationeel databasemodel- (zie later) -  of we kiezen voor een object geori&#xEB;nteerd model of &#x2026;).</p>
+<p>Het fysieke ontwerp behelst de implementatie van het logisch databaseontwerp. Omdat we gekozen hebben voor bijvoorbeeld het relationele model worden daartoe de instructies van SQL gebruikt.</p>
+<h3 id="definities">Definities</h3>
+<p>Bij het conceptueel ontwerp zijn abstrahering en modellering key elementen. Abstrahering heeft tot doel een duidelijk beeld te schetsen van wat belangrijk is en wat minder belangrijk voor de database, en het zoeken naar verwantschappen tussen data. Om dit resultaat vast te leggen  gaan we dit modelleren en maken we daarvoor gebruik van een representatietechniek: ER diagramma. (Je kan ook kiezen voor een UML diagramma, wat gebruikt wordt bij objectgeorienteerde ontwikkeling, terwijl ER zich meer richt tot database ontwikkeling!).</p>
+<blockquote>
+<p>In een ER-diagramma worden concepten uit de re&#xEB;le wereld gemodelleerd aan de hand van entiteiten en verwantschappen tussen entiteiten.</p>
+</blockquote>
+<p>De belangrijkste elementen van het E-R-model zijn entiteiten, attributen en relaties.
+Een entiteit is een begrip uit de werkomgeving van een gebruiker. Het is iets dat betekenis heeft voor
+de gebruiker. In de logische terminologie wordt een persoon, zaak, feit waarover we informatie
+bijhouden een entiteit (E: entity) genoemd. Andere termen die hiervoor gebruikt worden zijn object of
+relatie (E: relation) of entiteit (E: entity), ...</p>
+<blockquote>
+<p>Een entiteit is een &#x2018;ding&#x2019; dat een zelfstandig bestaan leidt in de re&#xEB;le wereld!</p>
+</blockquote>
+<p>Voorbeelden: een klant, een werknemer, een leverancier, een magazijn, een afdeling, een produkt, een
+voertuig, een bestelling, een betaling ...</p>
+<p>Een entiteit wordt  in een ER-diagram gevisualiseerd door een rechthoek met de naam van de entiteit in.</p>
+<p>Wat we over die entiteiten bijhouden noemen we attributen. Een attribuut (E: attribute) is een
+eigenschap of karakteristiek van een entiteit. Andere termen die hiervoor gebruikt worden zijn
+kenmerk, data-item, ...</p>
+<p>Entiteiten komen naar voren tijdens de informatievergaring doordat er gemeenschappelijke karakteristieken, dit zijn dus de attributen, rond een &#x2018;ding&#x2019; vormen. Bijvoorbeeld een jaartal, geschilderd door, prijs zijn gemeenschappelijke karakteristieken van de entiteit &#x2018;schilderij&#x2019;.</p>
+<p>Beschouw het voorbeeld van iemand die een rekening heeft bij een bank. Een individueel
+rekeninguittreksel vormt een entiteit. Ook de beschrijving van de rekeninghouder en de rekening zelf vormen elk een entiteit. De entiteit REKENINGHOUDER kan als attributen hebben: naam, adres,
+telefoon. De entiteit REKENINGUITTREKSEL kan als attributen hebben: nummer van de houder,
+bedrag, commentaarveld, rekeningnummer correspondent, ...</p>
+<p>Een attribuut wordt in een ER-diagram gevisualiseerd door een ovaal.</p>
+<p>Voorbeelden van visualisatie:</p>
+<p><img src="img/ervisual.jpg" alt="ervisual"></p>
+<p>Een verzameling van entiteiten wordt bijgehouden in entiteitsklassen &#x2013; of in deze cursus ook gewoonweg entiteit genoemd. Zo kan de entiteitsklasse STUDENTEN bestaan uit de entiteiten met attributen StudentNaam, StudentAdres, StudentNummer, StudentPostnummer, ...</p>
+<p>Indien gegevens worden toegevoegd aan de entiteitsklasse, betekent dit dat we attribuutwaarden gaan
+toekennen voor een bepaalde occurrence van een entiteit. Een occurrence (letterlijk &quot;voorkomen&quot;)
+wordt ook wel exemplaar van een entiteit genoemd.</p>
+<p>Indien we dus een nieuwe rekeninghouder zouden toevoegen, betekent dit een nieuwe occurrence van
+de entiteit houder, waarbij we voor de verschillende attributen de overeenstemmende attribuutwaarden zullen invullen.</p>
+<p><img src="img/visual2.jpg" alt="visual2"></p>
+<p>Hierboven is de entiteit dus &quot;houder&quot;, met als attributen &quot;naam&quot;, &quot;adres&quot; en &quot;telefoon&quot;. Van deze
+entiteit zijn er 2 occurrences getoond, waarvoor telkens 3 attribuutwaarden werden toegekend.</p>
+<h2 id="soorten-attributen">Soorten attributen</h2>
+<p>Attributen kunnen enkelvoudig of samengesteld zijn:</p>
+<p>Een enkelvoudig attribuut kan niet op een zinvolle manier verder onderverdeeld worden. Zo zal voor
+de entiteit rekening het attribuut saldo zeker enkelvoudig zijn: dit is immers een getal zonder meer, het
+heeft geen zin om de afzonderlijke cijfers ervan apart te gebruiken.</p>
+<p>Een samengesteld attribuut kan een groep, een vector of een herhaalde groep zijn:</p>
+<p><img src="img/attr1.jpg" alt="attr1"></p>
+<p>Een groep is &#xE9;&#xE9;n enkel attribuut dat uit verschillende elementen bestaat die elk op zich een aparte zinvolle betekenis kunnen hebben. Een dergelijk attribuut zou dus eventueel in meerdere afzonderlijke attributen kunnen  opgesplitst worden. In de meeste gevallen zal het wenselijk zijn om een attribuutgroep te  splitsen. Als bij de analyse namelijk blijkt dat je een deel van een groep ooit ergens apart nodig hebt, dan is splitsing van die groep aangewezen. Attribuutwaarden achteraf samenvoegen levert immers geen problemen, terwijl deelinformatie uit een groep eenduidig isoleren vaak onmogelijk is.</p>
+<p>In het hoger genoemde voorbeeld is voor de entiteit &quot;houder&quot; het attribuut &quot;naam&quot; een
+groep, want het bevat voornaam en familienaam, die elk op zich ook betekenis kunnen
+hebben. Voor vele toepassingen kan het echter zinvol zijn de voornaam en familienaam als
+aparte attributen te beschouwen. Indien b.v. zowel op voornaam als op familienaam moet
+kunnen gesorteerd worden, indien de volgorde van voornaam en familienaam kan wijzigen
+(op lijsten b.v. familienaam eerst, maar in een persoonlijke brief de voornaam eerst, ..)</p>
+<p>Ook voor het attribuut &quot;adres&quot; lijkt het zinvol om dit verder op te splitsen: indien het
+postnummer van een gemeente wijzigt, moet je dit eenvoudig kunnen aanpassen: het is
+dan ook wenselijk om dit apart op te slaan. Hetzelfde geldt waarschijnlijk voor de
+gemeentenaam: indien sortering hierop gewenst is, moet je deze eveneens als een apart
+attribuut defini&#xEB;ren. De rest van het attribuut adres (straat en huisnummer) als een groep
+defini&#xEB;ren is waarschijnlijk wel zinvol. Je hebt die gegevens waarschijnlijk nooit apart
+nodig, en dan is het eenvoudiger om bij opvragingen naar &#xE9;&#xE9;n attribuut te kunnen
+verwijzen.</p>
+<p> Een vector of meerwaardig attribuut is &#xE9;&#xE9;n enkel attribuut dat een willekeurig aantal keren voorkomt binnen een bepaalde entiteit.</p>
+<p>Voorbeeld: Indien je van een bepaalde persoon naast de persoonlijke gegevens ook de
+namen van zijn/haar kinderen wil bijhouden, dan levert dit een vectorattribuut op, waarbij
+het attribuut &quot;naam van kind&quot; dan 0, 1 of meerdere keren kan voorkomen.</p>
+<p>Een ander voorbeeld van een meerwaardig attribuut is het bijhouden van Talen en hobby&#x2019;s. Als binnen de database wordt aangenomen dat een artiest op een gegeven tijdstip verschillende talen kan spreken en een aantal hobby&#x2019;s kan hebben, worden deze attributen gemodelleerd als meerwaardige attributen.</p>
+<p>Binnen het ER-diagram wordt een meerwaardig attribuut gevisualiseerd door een dubbele ovaal.</p>
+<p>Afgeleid attribuut: voor sommige attributen kun je de actuele waarde op elk moment afleiden of berekenen uit de actuele waarde van andere attributen. Zo&#x2019;n attribuut noem je een afgeleid attribuut. Een typisch voorbeeld is een attribuut &#x2018;Leeftijd&#x2019; waarvan de waarde kan worden berekend als het verschil van de huidige datum en de geboortedatum die wordt bijgehouden in een attribuut &#x2018;Geboortedatum&#x2019;. Omdat het opslaan van afgeleide data in een database een potentiele bron kan zijn van inconsistentie, moet je afgeleide attributen apart behandelen. </p>
+<p>Een afgeleid attribuut wordt gevisualiseerd door een ovaal in stippellijn. </p>
+<p>Sleutelattributen. Het kan gebeuren dat alle entiteiten door 1 attribuut of verschillende attributen samen op een unieke, irreducibele manier moeten worden ge&#xEF;dentificeerd. Uniciteit wil daarbij zeggen dat er geen 2 entiteiten mogen bestaan die dezelfde waarde hebben voor de beschouwde attributen. Irreducibiliteit zil zeggen dat er geen uniciteit mag gelden als men, in geval van een aantal attributen, 1 van de attributen weglaat. Een verzameling van attributen waarvoor de uniciteit- en irreducibiliteitsrestricties gelden, vormt een sleutel voor het entiteit. Deze attributen noemt men de sleutelattributen. Zo kun je bijvoorbeeld aannemen dat er geen 2 artiesten bestaan met dezelfde naam en voornaam, in welk geval naam en voornaam de sleutelattributen zijn. In dit geval is &#x2018;Geboren&#x2019; geen sleutelattribuut want voor &#x2018;Naam&#x2019; en &#x2018;Voornaam&#x2019; geldt de uniciteitsrestrictie, waardoor de irreducibiliteitsrestrictie niet geldt voor Naam, Voornaam en Geboren. </p>
+<p>Het is een goede praktijk  om voor elke entiteit 1 sleutel te maken. Hiervoor kan het nodig zijn om een artificieel identificatorattribuut toe te voegen, dat dan op zich de sleutel is van de entiteit.</p>
+<p>Een sleutelattribuut wordt gevisualiseerd door hun naam te onderstrepen.</p>
+<p>Voorbeeld van attribuut visualisatie:</p>
+<p><img src="img/attrvisual.jpg" alt="attrvisual"></p>
+<p>In een zogenaamde genormaliseerde gegevensverzameling zullen namelijk geen merwaardige attributen  voorkomen. Dergelijke informatie kan inderdaad ook op een andere manier worden bijgehouden, namelijk door nieuwe entiteiten te defini&#xEB;ren die op deze data aggregates zijn gebaseerd en de gepaste relaties tussen de entiteiten te voorzien. Dit zien we verder in de cursus.</p>
+<h3 id="relaties">Relaties</h3>
+<p>Tussen verschillende entiteiten kunnen verbanden bestaan. Die verbanden worden relaties of
+relationele verbanden genoemd. </p>
+<blockquote>
+<p>Als definitie kunnen we zeggen dat een relatie een verwantschap is tussen 2 of meer al dan niet verschillende entiteiten. Men spreekt van een binaire of ternaire of n-aire (n&gt;3) relatie. Verder wordt elke relatie gekenmerkt door een naam.</p>
+</blockquote>
+<p>Relaties worden gevisualiseerd door een ruit (eventueel met de naam van de relatie).</p>
+<p>Bij relaties spreken  we over  kardinaliteitsrestricties: beperkt het aantal entiteiten dat op een gegeven tijdstip maximaal kan voorkomen in een relatie ( mogelijke waarden zijn: 1 of N(meerdere)). Bij binaire relaties spreken we over een-een relatie (1-1), een-op-meerdere (1:N) relatie, meerdere-op-meerdere (M:N) relatie.</p>
+<p>De eerste relatie is de &#xE9;&#xE9;n-&#xE9;&#xE9;n relatie, voorgesteld als volgt. In dit voorbeeld wordt elke werknemer
+gekoppeld aan een foto. Geen enkele werknemer heeft meer dan &#xE9;&#xE9;n foto, en van elke werknemer
+bestaat er een foto in de database.</p>
+<p><img src="img/relatie11.jpg" alt="relatie11"></p>
+<p>Bij de &#xE9;&#xE9;n-op-N relatie wordt een occurence of voorkomen van een entiteit gekoppeld aan meerdere
+occurences van  een andere entiteit. In dit voorbeeld kan elk huis meerdere inwoners hebben,
+terwijl een inwoner slechts in &#xE9;&#xE9;n huis kan wonen.</p>
+<p><img src="img/relatie1N.jpg" alt="relatie1N"></p>
+<p>Bij de N-op-M relatie worden meerdere occurences van een entiteitsklasse gekoppeld aan meerdere
+occurences in een andere entiteitsklasse. In dit voorbeeld kan een student meerdere vakken hebben,
+terwijl een vak kan gegeven worden aan meerdere studenten.</p>
+<p><img src="img/relatieNM.jpg" alt="relatieNM"></p>
+<p>Men spreekt ook van een binair, ternair of n-air (n&gt;3) relatietype.  Er kunnen meer dan 2 entiteiten betrokken zijn in de verwantschap.  Relaties kunnen net als entiteiten worden gekarakteriseerd door attributen. Dit komt voor wanneer een attribuut eigen is aan de verwantschap en niet aan 1 van de betrokken entiteiten. Een voorbeeld van een attribuut van een relatie is het attribuut dat uitdrukt voor hoeveel procent van een voltijdse betrekking een werknemer werkt bij een bepaald bedrijf. Dit percentage hoort bij de &#x2018;werkt voor&#x2019; verwantschap tussen werknemer en bedrijf en kun je niet associeren met de werknemer (die voor verschillende bedrijen kan werken) of het bedrijf (dat doorgaans meer werknemers heeft).</p>
+<p>Voorbeeld van een ternaire relatie type:</p>
+<p>Een student volgt een bepaalde opleidingsactiviteit en haalt bij testen hierop een bepaald resultaat.  Hoe kan je de relatie tussen het entiteittype student voorstellen ten opzichte van het entiteittype opleidingsonderdeel?</p>
+<p><img src="img/relatieTernair.jpg" alt="relatieTernair"></p>
+<p>Relaties worden gevisualiseerd in een ER-diagram door een ruit met de naam van de relatie. Elke betrokken entiteit wordt via een lijn verbonden met de ruit. Als er attributen bestaan voor de relatie, worden deze ook gemodelleerd door een ovaal met de naam van het attribuut, die via een lijn met de ruit van de relatie is verbonden.</p>
+<p>Voorbeelden zijn:</p>
+<p><img src="img/erVB.jpg" alt="erVB"></p>
+<p>In Figuur (a) wordt een binaire relatie &#x2018;werkt&#x2019; gevisualiseerd die gedefineerd is tussen de entiteiten werknemer en bedrijf. Deze relatie heeft een attribuut procent, dat aangeeft voor hoeveel procent de werknemer werkt bij het bedrijf.</p>
+<p>In figuur (b) visualiseren we een binaire relatie &#x2018;is partner&#x2019; waarbij alleen de entiteit persoon betrokken is. Hiermee geven we aan dat er een verwantschap &#x2019;is partner&#x2019; bestaat tussen personen.</p>
+<p>Figuur ( c ) is een voorbeeld van een 1 op veel relatie.</p>
+<p>HET DIAGRAM</p>
+<p>Soms is het ook wenselijk om een minimale cardinaliteit aan te geven. Dit wordt volgens de standaard
+gedaan door de aanduiding van het mininum aantal occurences, zoals getoond in figuur 3-5. Hier wordt
+aangegeven dat elke Inwoner een huis MOET hebben, terwijl een huis niet noodzakelijk inwoners moet
+hebben.</p>
+<p><img src="img/erVBx.jpg" alt="erVBx"></p>
+<h3 id="wanneer-relatie-wanneer-attribuut">Wanneer relatie, wanneer attribuut?</h3>
+<p>Relaties helpen mee om de verwante entiteiten te karakteriseren en kunnen in zekere zin worden beschouwd als een speciale vorm van attributen. Het verschil tussen een attribuut en een relatie wordt dan ook enkel bepaald door het abstraheringsproces: als alle betrokken entiteiten bestaan en dus als dusdanig werden ge&#xEF;dentificeerd, wordt de verwantschap gemodelleerd als relatie. Als een betrokken entiteit ontbreekt, wordt de verwantschap doorgaans gemodelleerd als attribuut. Kijk eens naar de entiteit &#x201C;schilderij&#x201D;. Als er een entiteit &#x201C;Artiest&#x201D; bestaat, zoals aangegeven dan moeten we de verwantschap tussen schilderij en artiest modelleren met een relatie. Mocht bij de abstrahering worden geconcludeerd dat er geen behoefte is aan detailgegevens over artiesten en dat de entiteit &#x2018;Artiest&#x2019; dus niet wordt beschouwd, dan kun je de verwantschap tussen schilderijen en artiesten modelleren door een &#x201C;extra artiest attribuut&#x201D; toe te voegen aan de entiteit &#x201C;schilderij&#x201D;.</p>
+<h2 id="recursieve-relaties">RECURSIEVE RELATIES</h2>
+<p>Ook tussen entiteiten uit dezelfde klasse kunnen relaties bestaan. Zo kan bij studenten de relatie bestaan
+ZIT_IN_DEZELFDE_GROEP, en gedefinieerd als volgt:</p>
+<p><img src="img/recursieveRelatie.jpg" alt="recursieveRelatie"></p>
+<h2 id="zwakke-entiteiten">Zwakke Entiteiten</h2>
+<p>Een zwakke entiteit zijn entiteiten die niet op zichzelf kunnen bestaan, maar die voor hun bestaan afhankelijk zijn van het bestaan van andere, identificerende entiteiten.</p>
+<p>Omdat zwakke entiteiten niet op zichzelf kunnen bestaan, kun je ze ook niet uniek identificeren zonder dat hun identificerende entiteiten bij de identificatie zijn betrokken.  De verwantschap tussen het zwakke entiteittype en de identificerende entiteit wordt door 1 of meer relatietypes gedefinieerd. De entiteit schilderij kan worden gezien als een zwakke entiteit, daar deze samenhangt aan de entiteit Artiest. Een schilderij kan immers niet bestaan tenzij iemand het heeft geschilderd. Andere voorbeelden zijn  een Medisch dossier met een identificerende entiteit patient, of profrenner en wielerploeg, of examen en student,Cursus.</p>
+<p>Zwakke entiteiten worden gevisualiseerd door een dubbele rechthoek, hun identificerende relatietype door een dubbele ruit.</p>
+<p><img src="img/zwakkeEntiteit.jpg" alt="zwakkeEntiteit"></p>
+<p>Zwakke entiteiten kan je niet uniek identificeren zonder hun identificerende entiteit, en kunnen dus geen sleutel hebben. Ze zullen wel sleutelattributen hebben die samen met de sleutelattributen van de identificerende identiteit voor een unieke, irreducibele identificatie van de zwakke entiteit zorgt.</p>
+<h2 id="subtypes-en-supertypes">Subtypes en supertypes</h2>
+<p>Om de realiteit beter te kunnen weergeven, worden de modelleringsfaciliteiten voor entiteiten verder uitgebreid, door gemeenschappelijke eigenschappen te modelleren. Het kan voorkomen dat sommige collecties moeten worden onderverdeeld in subcollecties omdat deze belangrijk zijn voor de gebruikers of toepassingen, en apart moeten kunnen worden beschouwd. Zo kan het bijvoorbeeld nuttig zijn om bij schilderijen een expliciet onderscheid te maken op basis van het materiaal waarop geschilderd wordt (doek, hout , papier, perkament) of op basis van het materiaal waarmee geschilderd wordt (olieverf, acryl, waterverf). Kunstwerken kunnen we onderverdelen in soorten (schilderij, beeldhouwwerk, wandtapijt, juweel). Werknemers kunnen we onderverdelen op basis van hun functie (technicus, administratief, kaderlid). Om subcollecties te karakteriseren, worden aparte entiteiten aangemaakt die fungeren als subtype.  De oorspronkelijke entiteit fungeert dan als supertype voor deze subtype.</p>
+<blockquote>
+<p>Een subtype is een entiteit dat een subcollectie van entiteiten karakteriseert. De entiteit van de collectie waarbinnen deze subcollectie wordt beschouwd, wordt het supertype genoemd.</p>
+</blockquote>
+<p>Een subtype erft alle attributen en verwante relaties van zijn supertype. Hiermee wordt bedoeld dat alle attributen en relaties die verwant zijn aan het supertype ook gelden en van toepassing zijn op het subtype, zonder dat we deze apart moeten kopieren naar het subtype. Een subtype kan zelf ook expliciet vermelde attributen en verwante relaties hebben. Deze gelden niet voor het supertype en noemen we daarom specifieke attributen en relaties! Zo erft het subtype Hout voor schilderijen op hout bijvoorbeeld het attribuut periode van zijn supertype schilderij. Daarnaast kan hout een specifiek attribuut houtsoort hebben.</p>
+<p>De supertype/subtype-verwantschap wordt in een ER-diagram gevisualiseerd door een verbindingslijn met het symbool voor deelverzamelingen &#x2018;C&#x2019;, waarbij de boog van het symbool gericht is naar het subtype. (dit geeft aan dat alle entiteiten van een subtype ook entiteiten zijn van het supertype (het omgekeerde geldt niet noodzakelijk). Zo zijn bijvoorbeeld alle schilderijen kunstwerken, maar niet alle 
+kunstwerken schilderijen.</p>
+<h2 id="case-studies">Case studies</h2>
+<p>Algemeen: de werkwijze:</p>
+<ol>
+<li>Identificeer de entiteiten</li>
+<li>Identificeer de zwakke entiteiten</li>
+<li>Identificeer de attributen</li>
+<li>Identificeer de relaties</li>
+</ol>
+<h3 id="database-voor-een-jeugdvereniging">Database voor een jeugdvereniging</h3>
+<p>Beschrijving: </p>
+<p>Een jeugdvereniging wenst een database op te zetten, ter ondersteuning van haar ledenadministratie en werking. Daarbij moet rekening worden gehouden met de volgende aspecten. Bij de inschrijving krijgt elk lid een uniek lidnummer. Gegevens zoals naam, voornaam, adres, geslacht en geboortedatum worden geregistreerd. In het begin van het werkjaar worden de leden ingedeeld in verschillende groepen volgens leeftijdsklassen.</p>
+<p> Er kunnen meerdere groepen zijn voor &#xE9;&#xE9;n leeftijdsklasse. Elke groep heeft een leid(st)er. Een leid(st)er is maximaal verantwoordelijke voor &#xE9;&#xE9;n groep. De leiding vormt zelf ook een groep, die correspondeert met de hoogste leeftijdsklasse.</p>
+<p>De leid(st)ers organiseren allerhande activiteiten voor de leden. Een dergelijke activiteit kan bestemd zijn voor &#xE9;&#xE9;n of meerdere groepen tegelijkertijd. Tevens kunnen meerdere activiteiten voor dezelfde groep worden gepland (op verschillende uren). </p>
+<p>Aan sommige activiteiten kunnen extra kosten verbonden zijn. Los daarvan kan het zijn dat de leden zich op voorhand voor een activiteit moeten inschrijven (en de kosten vereffenen). </p>
+<p>Werkwijze:</p>
+<p>Stap 1 : Identificeer de entiteiten. Uit voorgaande tekst kunnen de volgende entiteiten worden gedistilleerd: &#x2018;Lid&#x2019;, &#x2018;Groep&#x2019;, en &#x2018;Activiteit&#x2019;. Deze types beschrijven de entiteiten waarover informatie moet worden bijgehouden.</p>
+<p>Stap 2:  identificatie van zwakke entiteiten en hun identificerende relatietypes. Er zijn geen zwakke entiteiten.</p>
+<p>Stap 3: Identificatie van de attributen, hun karakteristieken en restricties. De entiteit &#x2018;lid&#x2019; heeft als enig sleutelattribuut &#x2018;lidnummer&#x2019;, verder zijn er nog de attributen &#x2018;geboortedatum&#x2019;, &#x2018;geslacht&#x2019;, &#x2018;naam &#x2018;en &#x2018;voornaam&#x2019;, het samengesteld attribuut &#x2018;adres&#x2019; dat bestaat uit de componentenattributen &#x2018;straat&#x2019;, &#x2018;nummer&#x2019; en &#x2018;postcode&#x2019; en het afgeleid attribuut &#x2018;leeftijd&#x2019; dat nodig is om de groep van het &#x2018;lid&#x2019; te kunnen bepalen. De entiteit &#x2018;groep&#x2019; heeft als enig sleutelattribuut &#x2018;naam&#x2019;. Verder is er nog een samengesteld attribuut &#x2018;leeftijd&#x2019; met componentattributen &#x2018;minimum&#x2019; en &#x2018;maximum&#x2019;. Het enige sleutelattribuut van de entiteit activiteit is &#x2018;nummer&#x2019;. Verder zijn er nog de attributen &#x2018;tijdstip&#x2019;,&#x2019; kost&#x2019; en &#x2018;omschrijving&#x2019;.</p>
+<p>Stap 4: Identificatie van de relaties, hun eventuele attributen, hun karakteristieken en restricties. Er zijn 4 relatietypes die allemaal binair zijn. De relatie &#x201C;lid van&#x201D; wordt gebruikt om weer te geven dat groepen bestaan uit nul of meer leden en dat elk lid deel uitmaakt van precies 1 groep. De relatie &#x2018;leider van&#x2019; wordt gebruikt om aan te geven dat elke groep precies 1 leider heeft en dat een lid maar leider kan zijn van ten hoogste 1 groep. De relatie voor wordt gebruikt om de verwantschappen tussen activiteiten en groepen aan te geven. Er kunnen nul of meer activiteiten gepland zijn voor een groep en elke activiteit is gepland voor minstens 1 groep. Verder is er nog de relatie &#x201C;schrijft in&#x201D; dat wordt gebruikt om weer te geven dat meerdere leden kunnen inschrijven voor een activiteit en dat een lid kan inschrijven voor diverse activiteiten. Het relatietype heeft een attribuut &#x201C;betaald&#x201D; waarmee wordt bijgehouden of een lid voor zijn inschrijving al heeft betaald (als er extra kosten zijn).</p>
+<p>ER-diagram:</p>
+<p><img src="img/jeugdvereniging.jpg" alt="jeugdvereniging"></p>
+<h3 id="reservatiesysteem-voor-een-theater">Reservatiesysteem voor een theater</h3>
+<p>In een theaterzaal worden verschillende stukken opgevoerd (toneel, ballet, opera enzovoort). Doorgaans worden verschillende voorstellingen van een bepaald stuk opgevoerd. Voor elk stuk wordt de titel, de duur, de soort, de organisator, de uitvoerder en een uniek nummer bewaard. Van iedere voorstelling wordt de datum en het beginuur opgeslagen. Aangezien er maar &#xE9;&#xE9;n zaal is, kan op hetzelfde ogenblik maar &#xE9;&#xE9;n voorstelling worden geprogrammeerd.
+De zitplaatsen in de zaal worden doorlopend genummerd en zijn ingedeeld in zones die een aparte naam hebben. De toegangsprijs is afhankelijk van de zone van de zitplaats.
+De verkoop van tickets verloopt uitsluitend via reservering. De klant moet hierbij zijn naam en adres opgeven en kan dan &#xE9;&#xE9;n of meerdere zitplaatsen reserveren voor een voorstelling. Er wordt bijgehouden of voor deze reservering reeds werd betaald. </p>
+<p>Werkwijze</p>
+<p>Stap 1: identificatie van de reguliere entiteiten. We kunnen 4 entiteiten onderscheiden: &#x2018;Stuk&#x2019;, &#x2018;Klant&#x2019;, &#x2018;Zitplaats&#x2019;, &#x2018;Zone&#x2019;.</p>
+<p>Stap 2: Identificatie van de zwakke entiteiten en hun identificerende relatie. Er is 1 zwakke entiteit, namelijk &#x2018;Voorstelling&#x2019;. Een voorstelling kan immers niet bestaan zonder dat er een stuk is. </p>
+<p>Stap 3: Identificatie van attributen, hun karakteristieken en hun restricties. De entiteit &#x2018;stuk&#x2019; heeft als enig sleutelattribuut stuknummer. Verder zijn er nog de attributen titel, soort, organisator, uitvoerder en duur. </p>
+<p>De entiteit &#x2018;klant&#x2019; heeft als enig sleutelattribuut klantnummer. De andere attributen zijn naam en adres. In deze toepassing worden deze attributen niet meer verder opgesplitst, waardoor namen en adressen als een geheel worden gemodelleerd. Dit impliceert dat de database later bijvoorbeeld niet rechtstreeks onderzocht zal kunnen worden op postcode. Uiteraard kan de postcode wel uit het adres worden gefilterd via programmacode. Als echter vooral bekend is dat statistische informatie over de woonplaats van de klanten moet kunnen worden afgeleid uit de database, is het beter om het adres als samengesteld attribuut weer te geven zoals in de vorige casestudie. Dit illustreert het belang van een goede communicatie met de opdrachtgever. De entiteit &#x2018;zone&#x2019; heeft het sleutelattribuut naam als enig attribuut. De entiteit zitplaats heeft als enig attribuut het sleutelattribuut plaatsnummer. Toch is het nodig om zowel zitplaats, als zone als entiteit weer te geven, want beide blijken betrokken te zijn in de definitie van aparte relatie.</p>
+<p>Stap 4: Identificatie van de relaties, hun eventuele attributen , hun karakteristieken en hun restricties. Er zijn 3 relaties. De relatie &#x2018;tarief&#x2019; is binair en heeft een attribuut prijs. Het geeft aan dat er bij verschillende voorstellingen tarieven worden gehanteerd voor verschillende zones. De relatie&#x2019;in&#x2019; is eveneens binair en geeft aan in welke zone elke zitplaats zich bevindt en welke zitplaatsen in elke zone voorkomen. De relatie reservering is ternair en heeft een attribuut betaald voor een gegeven reservering. Met deze relatie wordt gemodelleerd dat een klant per reservering meerdere plaatsen voor verschillende voorstellingen kan reserveren.</p>
+<p>ER-diagram:</p>
+<p><img src="img/reservatie.jpg" alt="reservatie"></p>
+<h2 id="oefeningen">Oefeningen</h2>
+<h3 id="opgave-1bepaal-het-erd-voor-de-volgende">Opgave 1.Bepaal het ERD voor de volgende</h3>
+<p>A:    opleiding        (opleidingscode, omschrijving, duur)
+    afdeling            (afdelingnr, naam-afdeling)
+    medewerker        (medewerkernr, naam, adres, afdelingnr)
+    gevolgde opleiding    (medewerkernr, opleidingcode, datum, voltooing)</p>
+<p>B:    kamerbestand        (kamernr, adres, plaats, huurprijs, faciliteitcode)
+    faciliteiten        (faciliteitcode, kookgelegenheid, douche/bad, aantal kamers)
+    huurcontract        (studentnr, kamernr, contractduur, datum contractafloop)
+    student            (studentnr, naam, studentadres, studentplaats)    </p>
+<h3 id="opgave-2-erd">Opgave 2: ERD</h3>
+<p>Geef de verschillende relaties weer tussen studenten, klassen en lectoren.</p>
+<h3 id="opgave-3-erd-en-occurences">Opgave 3: ERD en occurences</h3>
+<p>Gegeven zijn de volgende entiteittypen:
+leverancier    (levnr, levnaam, woonplaats)
+artikel        (artnr, artnaam, kleur)
+klant        (klnr, klnaam, woonplaats)
+levering        (levnr, artnr, klnr, hoeveelheid)</p>
+<p>Leverancier
+Levnr    levnaam    Woonplaats
+L1    Smeets    Antwerpen
+L2    Eggen    Ekeren
+L3    Wagemans    Antwerpen
+L4    Van Holle    Utrecht
+L5    Schavey    Aken</p>
+<p>Artikel
+Artnr    artnaam    Kleur
+a1    stoel    Bruin
+a2    tafel    Wit
+a3    stoel    Rood
+a4    bureau    Groen
+a5    kapstok    Rood</p>
+<p>Klant
+Klnr    klnaam    Woonplaats
+k1    Aerts    Geel
+k2    Beerts    Zutendaal
+k3    Claes    Hemiksem
+k4    Decat    Ronse
+k5    Egmont    Hemiksem
+k6    Faes    Antwerpen</p>
+<p>Levering
+Levnr    artnr    klnr    Hoeveelheid
+L1    a1    k1    10
+L1    a1    k3    20
+L2    a4    k1    10
+L2    a4    k2    20
+L2    a4    k3    10
+L2    a4    k4    15
+L2    a4    k5    15
+L2    a4    k6    5
+L3    a3    k2    5
+L3    a4    k4    10
+L4    a2    k4    5
+L4    a1    k3    10
+L4    a2    k3    15
+L4    a3    k3    5
+L4    a4    k3    5
+L4    a5    k3    10
+L4    a2    k4    20
+L5    a3    k6    20</p>
+<p>a.    Geef het ERD
+b.    Bepaal de levnrs voor die leveranciers die aan klant k6 een rood artikel leveren
+c.    Bepaal de artnrs die aan een klant in Hemiksem geleverd worden
+d.    Bepaal de artnrs die aan een klant in Hemiksem door een leverancier in Ekeren geleverd worden
+e.    Bepaal de namen van de klanten waaraan artikelen worden geleverd door ten minste &#xE9;&#xE9;n leverancier uit de woonplaats zelf
+f.    Bepaal de klnrs van die klanten waaraan door alle leveranciers die een rood artikel leveren (aan wie dan ook), wordt geleverd
+g.    Bepaal de artnrs die aan alle klanten in Hemiksem worden geleverd</p>
+<h3 id="opgave-4">Opgave 4</h3>
+<p>Een softwarefirma wil een database opzetten als hulp bij het controleren en corrigeren van fouten die ontdekt worden in haar softwareproducten. Aan elk softwareproduct wordt een uniek productnummer toegekend en een beschrijving toegevoegd. Van een product worden verschillende versies uitgebracht, die per product een versienummer krijgen. Daarnaast wordt ook de datum waarop de versie werd uitgebracht bewaard. Een versie van een product kan zowel door externe als door interne gebruikers (bijvoorbeeld programmeurs en systeemtesters) worden gebruikt. Interne gebruikers mogen alle versies van alle producten gebruiken zonder voorafgaande aanvraag. Externen dienen de versie van het product eerst aan te kopen. Bij de verkoop wordt voor elk verkocht exemplaar een uniek registratienummer &#x2013;dat geldt voor &#xE9;&#xE9;n of meerdere externe gebruikers&#x2013; en de registratiedatum vastgelegd.
+Wanneer een gebruiker een probleem constateert, kan hij of zij hierover een probleemrapport opstellen (en overmaken aan de onderhoudsafdeling). Zo&#x2019;n rapport kan zowel door een interne als door een externe gebruiker worden opgemaakt en vermeldt naast een verwijzing naar het product en de versie, ook de datum en een omschrijving van het probleem. Aan elk rapport wordt verder een uniek rapportnummer, een prioriteit en een status (aan te passen door de onderhoudsafdeling) toegekend. Aangezien externe gebruikers enkel een rapport mogen sturen in verband met de versies waarvoor zij geregistreerd zijn, dienen zij steeds hun registratienummer te vermelden.
+Interne gebruikers dienen enkel hun werknemernummer op te geven, terwijl externen ge&#xEF;dentificeerd worden via de combinatie van hun naam en de naam van hun bedrijf. Van alle gebruikers wordt tenslotte ook nog het telefoonnummer, adres en e-mail adres bijgehouden (indien bekend). </p>
+<h3 id="opgave-5">Opgave 5</h3>
+<p>Ontwerp een ER-diagram voor de volgende opdracht. Een sportvereniging telt een aantal leden (spelers) waarvan de naam, adres, geboortejaar, geslacht en jaar van toetreding geregistreerd zijn. De vereniging telt twee spelerscategorie&#xEB;n: recreatiespelers en wedstrijdspelers. Wedstrijdspelers spelen in teamverband tegen spelers van andere verenigingen/clubs. Elke speler krijgt bij toetreding een uniek spelersnummer. Elke wedstrijdspeler is (verplicht) ook bij de bond geregistreerd en heeft aldus eveneens een uniek bondsnummer. </p>
+<p>Elke wedstrijdspeler is ingedeeld bij &#xE9;&#xE9;n team, afhankelijk van zijn/haar leeftijd en sekse. Elk team heeft een unieke teamcode. Voor een bepaalde leeftijdklasse (nieuwelingen, juniores, &#x2026;) en sekse kunnen er meerdere teams zijn. Elk team heeft een vaste trainer, die ook lid is van de vereniging. Een lid kan maar trainer zijn van &#xE9;&#xE9;n team. De trainingen verlopen volgens een vast wekelijks trainingrooster, dat verschilt van team tot team. Hierin zijn voor elk van de wekelijkse trainingen vastgelegd: de dag van de week, de tijd, de duur en de sportzaal waar de training doorgaat. Van eenzelfde team kunnen er nooit meerdere trainingen op dezelfde dag plaatsvinden. Van alle beschikbare zalen worden de volgende gegevens bijgehouden: de naam (uniek), het adres en het telefoonnummer. Geregeld spelen teams wedstrijden tegen teams van andere verenigingen. Een wedstrijd, gekenmerkt door een uniek wedstrijdnummer, gaat door op een bepaalde datum en tijdstip in de zaal die daarvoor wordt gereserveerd. Bij elke wedstrijd is een scheidsrechter aanwezig, die eveneens lid is van de vereniging (maar niet behoort tot het team dat de wedstrijd speelt). De bond kan naar aanleiding van een gespeelde wedstrijd &#xE9;&#xE9;n of meerdere boetes uitdelen aan spelers of aan de vereniging zelf. Bij elke uitgedeelde boete wordt door de bond een toelichting verstrekt en het te betalen bedrag bekend gemaakt. </p>
+<h3 id="opgave-6">Opgave 6</h3>
+<p>Wat zijn zwakke entiteittypes? Waarom zijn deze nodig? </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="gegevens.html" class="navigation navigation-prev " aria-label="Previous page: Logische en fysische gegevens">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="relationeel.html" class="navigation navigation-next " aria-label="Next page: Relationele databases">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Entiteit-Relatie diagramma","level":"1.4","depth":1,"next":{"title":"Relationele databases","level":"1.5","depth":1,"path":"relationeel.md","ref":"relationeel.md","articles":[]},"previous":{"title":"Logische en fysische gegevens","level":"1.3","depth":1,"path":"gegevens.md","ref":"gegevens.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"er.md","mtime":"2018-05-18T07:11:48.482Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-18T07:58:36.451Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

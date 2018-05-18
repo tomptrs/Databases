@@ -1,3 +1,10 @@
+
+* [Inleiding](inleiding.md)
+* [Logische en fysische gegevens](gegevens.md)
+* [Entiteit-Relatie diagramma](er.md)
+* [Relationele databases](relationeel.md)
+* [Normalisatie](normalisatie.md)
+
 # Fysische en logische gegevens
 
 Welke soort gegevens kunnen er op de hardware opgeslagen worden?
